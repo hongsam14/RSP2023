@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2897847427949830429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4278642551749556936}
+  - component: {fileID: 2478265890191940622}
+  m_Layer: 0
+  m_Name: weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4278642551749556936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897847427949830429}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.00052359875, w: 0.9999999}
+  m_LocalPosition: {x: 0.18542992, y: 6.223408, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8081200924109792151}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2478265890191940622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897847427949830429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fd8daaed7b64148a34acb96ba14ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonRenderer: {fileID: 7906749362577321404}
+  boneName: weapon
+  followXYPosition: 1
+  followZPosition: 1
+  followBoneRotation: 1
+  followSkeletonFlip: 1
+  followLocalScale: 0
+  followParentWorldScale: 0
+  maintainedAxisOrientation: 1
+  initializeOnAwake: 1
 --- !u!1 &3498664304490756872
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +65,7 @@ GameObject:
   - component: {fileID: 8081200924109792151}
   - component: {fileID: 7310433071193740066}
   - component: {fileID: 3980496642678440781}
+  - component: {fileID: 1318374894162814141}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -32,6 +87,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 767217857841150839}
+  - {fileID: 4278642551749556936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7310433071193740066
@@ -96,6 +152,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06743652, y: 0.49205422}
   m_Size: {x: 1.6059588, y: 7.245086}
   m_Direction: 0
+--- !u!114 &1318374894162814141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498664304490756872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693d8cd8011af824fb176e85ac09f5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  maxSpeed: 20
+  jumpForce: 0
 --- !u!1 &9216320757401636077
 GameObject:
   m_ObjectHideFlags: 0
