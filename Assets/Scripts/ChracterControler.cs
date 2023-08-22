@@ -8,6 +8,9 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private float speed = 0.0f;
     [SerializeField] private float maxSpeed = 0.0f;
     [SerializeField] private float jumpForce = 0.0f;
+    [Header("SpineAnimation")]
+    [SerializeField] private Spine.AnimationState spineAnimationState;
+    [SerializeField] private Spine.Skeleton skeleton;
 
     private Rigidbody2D rigidbody;
     //status
