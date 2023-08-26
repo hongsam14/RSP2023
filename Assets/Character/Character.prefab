@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fd8daaed7b64148a34acb96ba14ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonRenderer: {fileID: 7906749362577321404}
+  skeletonRenderer: {fileID: 0}
   boneName: weapon
   followXYPosition: 1
   followZPosition: 1
@@ -167,6 +167,9 @@ MonoBehaviour:
   speed: 10
   maxSpeed: 20
   jumpForce: 0
+  stand: stand
+  move: move
+  jump: jump
 --- !u!1 &9216320757401636077
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 767217857841150839}
   - component: {fileID: 9051481384743816048}
-  - component: {fileID: 7906749362577321404}
   - component: {fileID: 4367922775675379423}
+  - component: {fileID: 7726804495676495093}
   m_Layer: 0
   m_Name: spine
   m_TagString: Untagged
@@ -239,11 +242,19 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -176558679
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7906749362577321404
+--- !u!33 &4367922775675379423
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216320757401636077}
+  m_Mesh: {fileID: 0}
+--- !u!114 &7726804495676495093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,7 +263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9216320757401636077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e075b9a3e08e2f74fbd651c858ab16ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 70c3d6088907a9f48be3c3ea981a5be5, type: 2}
@@ -278,11 +289,8 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
---- !u!33 &4367922775675379423
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216320757401636077}
-  m_Mesh: {fileID: 0}
+  updateTiming: 1
+  unscaledTime: 0
+  _animationName: 
+  loop: 0
+  timeScale: 1

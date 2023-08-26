@@ -413,54 +413,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.18542992
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.223408
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278642551749556936, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.00052359875
-      objectReference: {fileID: 0}
     - target: {fileID: 4367922775675379423, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7906749362577321404, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maskInteraction
+    - target: {fileID: 7726804495676495093, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
+      propertyPath: initialFlipX
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7906749362577321404, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maskMaterials.materialsOutsideMask.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7906749362577321404, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maskMaterials.materialsMaskDisabled.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7906749362577321404, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maskMaterials.materialsOutsideMask.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a221f565052d554eaf9b59ecd5e464a, type: 2}
-    - target: {fileID: 7906749362577321404, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maskMaterials.materialsMaskDisabled.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 898ac10a04a95884b9267397bee5b98e, type: 2}
     - target: {fileID: 8081200924109792151, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -501,18 +461,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9051481384743816048, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051481384743816048, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -176558679
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051481384743816048, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 898ac10a04a95884b9267397bee5b98e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
