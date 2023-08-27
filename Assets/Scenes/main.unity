@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 931241807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.005016666, w: 0.9999874}
-  m_LocalPosition: {x: 3.58, y: 1.48, z: 0}
+  m_LocalPosition: {x: 2.97, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -410,16 +410,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1318374894162814141, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: speed
-      value: 20
+      propertyPath: fall
+      value: fall
       objectReference: {fileID: 0}
     - target: {fileID: 1318374894162814141, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: maxSpeed
-      value: 30
+      propertyPath: onAir
+      value: on_air
       objectReference: {fileID: 0}
     - target: {fileID: 1318374894162814141, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
       propertyPath: jumpForce
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3498664304490756872, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
       propertyPath: m_Name
@@ -429,33 +429,9 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7310433071193740066, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310433071193740066, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LinearDrag
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310433071193740066, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7726804495676495093, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: initialFlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081200924109792151, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081200924109792151, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081200924109792151, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
+      propertyPath: _animationName
+      value: stand
       objectReference: {fileID: 0}
     - target: {fileID: 8081200924109792151, guid: 77a6ca08837c9994db9bfd23d2b4ecdb, type: 3}
       propertyPath: m_LocalPosition.x

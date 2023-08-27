@@ -1,7 +1,6 @@
 character_3.png
 size:512,512
 filter:Linear,Linear
-pma:true
 scale:0.5
 body
 bounds:140,428,82,115

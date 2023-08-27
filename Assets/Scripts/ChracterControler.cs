@@ -20,6 +20,8 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string stand;
     [SerializeField] private string move;
     [SerializeField] private string jump;
+    [SerializeField] private string onAir;
+    [SerializeField] private string fall;
     //spine animation skeleton
     public Spine.AnimationState spineAnimationState { get; private set; }
     public Spine.Skeleton skeleton { get; private set; }
@@ -39,6 +41,10 @@ public class ChracterControler : MonoBehaviour
     private bool _isJumping = false;
     private bool _isFalling = false;
     private GroundType groundType;
+    /**
+     * Define Animation State 
+     * 
+     */
     public bool isMoving
     {
         get => _isMoving;
@@ -46,14 +52,17 @@ public class ChracterControler : MonoBehaviour
         {
             if (value == _isMoving)
                 return ;
-            switch (value)
+            if (!isJumping)
             {
-                case true:
-                    currentTrack = spineAnimationState?.SetAnimation(0, move, true);
-                    break;
-                case false:
-                    currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
-                    break;
+                switch (value)
+                {
+                    case true:
+                        currentTrack = spineAnimationState?.SetAnimation(0, move, true);
+                        break;
+                    case false:
+                        currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
+                        break;
+                }
             }
             _isMoving = value;
         }
@@ -91,6 +100,27 @@ public class ChracterControler : MonoBehaviour
             _isJumping = value;
         }
     }
+    public bool isFalling
+    {
+        get => _isFalling;
+        set
+        {
+            if (value == _isFalling)
+                return;
+            switch (value)
+            {
+                case true:
+                    currentTrack = spineAnimationState?.SetAnimation(0, onAir, true);
+                    break;
+                /*
+                case false:
+                    currentTrack = spineAnimationState?.SetAnimation(0, fall, false);
+                    break;
+                */
+            }
+            _isFalling = value;
+        }
+    }
 
     //input
     private Vector2 movementInput = Vector2.zero;
@@ -124,9 +154,6 @@ public class ChracterControler : MonoBehaviour
         //update
         //horizontal
         movementInput.x = Input.GetAxis("Horizontal");
-
-        //set status
-        SetStatus(movementInput.x);
         
         //jump
         if (!isJumping && Input.GetKeyDown(KeyCode.Space))
@@ -138,6 +165,9 @@ public class ChracterControler : MonoBehaviour
     void FixedUpdate()
     {
         UpdateGround();
+        //set status
+        SetStatus(movementInput.x);
+        
         MoveHorizontal();
         Jump();
         prevVelocity = rigidbody.velocity;
@@ -158,11 +188,6 @@ public class ChracterControler : MonoBehaviour
 
     void Jump()
     {
-        //falling
-        if (isJumping && rigidbody.velocity.y < 0)
-        {
-            _isFalling = true;
-        }
         //jump
         if (jumpInput && groundType != GroundType.None)
         {
@@ -173,13 +198,13 @@ public class ChracterControler : MonoBehaviour
             Debug.Log("jump");
         }
         //landing
-        else if (isJumping && _isFalling && groundType != GroundType.None)
+        else if (isJumping && isFalling && groundType != GroundType.None)
         {
             prevVelocity.y = rigidbody.velocity.y;
             rigidbody.velocity = prevVelocity;
 
+            isFalling = false;
             isJumping = false;
-            _isFalling = false;
             Debug.Log("landing");
         }
     }
@@ -194,6 +219,13 @@ public class ChracterControler : MonoBehaviour
             isHeading = 1f;
         else if (movement < 0f)
             isHeading = -1f;
+
+        //falling
+        if (isJumping && rigidbody.velocity.y < 0)
+        {
+            isFalling = true;
+            Debug.Log("on air");
+        }
     }
 
     void UpdateGround()
