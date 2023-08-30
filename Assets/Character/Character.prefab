@@ -170,6 +170,8 @@ MonoBehaviour:
   stand: stand
   move: move
   jump: jump
+  onAir: 
+  fall: 
 --- !u!1 &9216320757401636077
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +245,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -176558679
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &4367922775675379423
@@ -291,6 +293,6 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: stand
   loop: 0
   timeScale: 1
