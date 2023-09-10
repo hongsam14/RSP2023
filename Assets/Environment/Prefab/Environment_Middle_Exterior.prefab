@@ -346,8 +346,8 @@ SpriteShapeRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 73fcf2d27cd810f42945565466782850, type: 2}
+  - {fileID: 2100000, guid: 73fcf2d27cd810f42945565466782850, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -372,7 +372,7 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 21300000, guid: c0c344911d581e94597ba9ebe810bbd3, type: 3}
+  - {fileID: 21300000, guid: 1212e45e43ce65240b29e0b0fa48f395, type: 3}
   m_LocalAABB:
     m_Center: {x: 3.7734451, y: -0.046454906, z: 0}
     m_Extent: {x: 15.676552, y: 3.8461857, z: 0}
