@@ -126,10 +126,10 @@ TextureImporter:
       name: body
       rect:
         serializedVersion: 2
-        x: 140
-        y: -31
-        width: 82
-        height: 115
+        x: 275
+        y: -64
+        width: 163
+        height: 229
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: ear
       rect:
         serializedVersion: 2
-        x: 233
-        y: 110
-        width: 28
-        height: 28
+        x: 542
+        y: 215
+        width: 56
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: hair_piece_1
       rect:
         serializedVersion: 2
-        x: 125
-        y: 114
-        width: 36
-        height: 77
+        x: 850
+        y: -80
+        width: 72
+        height: 154
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,9 +190,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 280
-        width: 61
-        height: 68
+        y: 552
+        width: 120
+        height: 136
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: hair_piece_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 280
-        width: 51
-        height: 59
+        x: 245
+        y: 221
+        width: 102
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: hair_piece_right_side
       rect:
         serializedVersion: 2
-        x: 74
-        y: 341
-        width: 30
-        height: 46
+        x: 480
+        y: 215
+        width: 60
+        height: 91
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,9 +253,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 196
-        width: 83
-        height: 82
+        y: 386
+        width: 166
+        height: 164
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,8 +275,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 136
-        height: 105
+        width: 271
+        height: 210
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: left_arm
       rect:
         serializedVersion: 2
-        x: 163
-        y: 114
-        width: 29
-        height: 73
+        x: 124
+        y: 552
+        width: 58
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: left_arm_2
       rect:
         serializedVersion: 2
-        x: 44
-        y: 438
-        width: 29
-        height: 64
+        x: 422
+        y: 221
+        width: 56
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: left_eye
       rect:
         serializedVersion: 2
-        x: 106
-        y: 368
-        width: 40
-        height: 13
+        x: 92
+        y: 745
+        width: 78
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: left_eye_ball
       rect:
         serializedVersion: 2
-        x: 263
-        y: 127
-        width: 15
-        height: 14
+        x: 542
+        y: 272
+        width: 28
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: left_eye_brouse
       rect:
         serializedVersion: 2
-        x: 263
-        y: 114
-        width: 19
-        height: 11
+        x: 624
+        y: 167
+        width: 36
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,10 +399,10 @@ TextureImporter:
       name: left_eyeshadow
       rect:
         serializedVersion: 2
-        x: 339
-        y: 65
-        width: 28
-        height: 10
+        x: 278
+        y: 418
+        width: 55
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: left_eyeshadow_down
       rect:
         serializedVersion: 2
-        x: 74
-        y: 424
-        width: 24
-        height: 8
+        x: 600
+        y: 248
+        width: 48
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +441,10 @@ TextureImporter:
       name: left_eyeshadow_up
       rect:
         serializedVersion: 2
-        x: 254
-        y: 162
-        width: 29
-        height: 7
+        x: 71
+        y: 896
+        width: 56
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: left_hand
       rect:
         serializedVersion: 2
-        x: 74
-        y: 389
-        width: 24
-        height: 33
+        x: 245
+        y: 322
+        width: 46
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: left_leg
       rect:
         serializedVersion: 2
-        x: 257
-        y: 1
-        width: 34
-        height: 80
+        x: 2
+        y: 853
+        width: 67
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,10 +504,10 @@ TextureImporter:
       name: left_leg_2
       rect:
         serializedVersion: 2
-        x: 353
-        y: -38
-        width: 40
-        height: 80
+        x: 506
+        y: 6
+        width: 77
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: mouth
       rect:
         serializedVersion: 2
-        x: 263
-        y: 103
-        width: 28
-        height: 9
+        x: 667
+        y: 126
+        width: 56
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,10 +546,10 @@ TextureImporter:
       name: mouth_ver2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 83
-        width: 32
-        height: 18
+        x: 238
+        y: 489
+        width: 64
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: nose
       rect:
         serializedVersion: 2
-        x: 75
-        y: 459
-        width: 9
-        height: 9
+        x: 667
+        y: 146
+        width: 18
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,10 +588,10 @@ TextureImporter:
       name: right_arm
       rect:
         serializedVersion: 2
-        x: 435
-        y: -33
-        width: 34
-        height: 69
+        x: 184
+        y: 551
+        width: 67
+        height: 137
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: right_arm_2
       rect:
         serializedVersion: 2
-        x: 194
-        y: 114
-        width: 37
-        height: 65
+        x: 349
+        y: 221
+        width: 71
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,10 +630,10 @@ TextureImporter:
       name: right_eye
       rect:
         serializedVersion: 2
-        x: 297
-        y: 83
-        width: 19
-        height: 12
+        x: 312
+        y: 341
+        width: 35
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,10 +651,10 @@ TextureImporter:
       name: right_eye_ball
       rect:
         serializedVersion: 2
-        x: 75
-        y: 446
-        width: 13
-        height: 11
+        x: 238
+        y: 527
+        width: 23
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,10 +672,10 @@ TextureImporter:
       name: right_eye_brouse
       rect:
         serializedVersion: 2
-        x: 75
-        y: 434
-        width: 15
-        height: 10
+        x: 92
+        y: 780
+        width: 28
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -693,10 +693,10 @@ TextureImporter:
       name: right_eyeshadow
       rect:
         serializedVersion: 2
-        x: 318
-        y: 83
-        width: 18
-        height: 9
+        x: 1006
+        y: 62
+        width: 33
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -714,10 +714,10 @@ TextureImporter:
       name: right_eyeshadow_down
       rect:
         serializedVersion: 2
-        x: 194
-        y: 181
-        width: 20
-        height: 5
+        x: 71
+        y: 939
+        width: 37
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,10 +735,10 @@ TextureImporter:
       name: right_eyeshadow_up
       rect:
         serializedVersion: 2
-        x: 263
-        y: 156
-        width: 21
-        height: 8
+        x: 1006
+        y: 27
+        width: 41
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,10 +756,10 @@ TextureImporter:
       name: right_hand
       rect:
         serializedVersion: 2
-        x: 229
-        y: 76
-        width: 22
-        height: 32
+        x: 480
+        y: 290
+        width: 43
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,10 +777,10 @@ TextureImporter:
       name: right_leg
       rect:
         serializedVersion: 2
-        x: 87
-        y: 196
-        width: 34
-        height: 82
+        x: 170
+        y: 386
+        width: 66
+        height: 163
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -798,10 +798,10 @@ TextureImporter:
       name: right_leg_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 432
-        width: 40
-        height: 78
+        x: 693
+        y: -76
+        width: 77
+        height: 155
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,10 +819,10 @@ TextureImporter:
       name: scarf
       rect:
         serializedVersion: 2
-        x: 257
+        x: 506
         y: 2
-        width: 94
-        height: 43
+        width: 185
+        height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -841,9 +841,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 385
-        width: 80
-        height: 45
+        y: 763
+        width: 161
+        height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -862,9 +862,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 109
-        width: 121
-        height: 85
+        y: 214
+        width: 241
+        height: 170
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,10 +882,10 @@ TextureImporter:
       name: tail_hair_left
       rect:
         serializedVersion: 2
-        x: 49
-        y: 350
-        width: 23
-        height: 86
+        x: 451
+        y: 42
+        width: 46
+        height: 171
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,10 +903,10 @@ TextureImporter:
       name: tail_hair_right
       rect:
         serializedVersion: 2
-        x: 140
-        y: 25
-        width: 26
-        height: 87
+        x: 275
+        y: 45
+        width: 52
+        height: 174
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -924,10 +924,10 @@ TextureImporter:
       name: top_tail_hair
       rect:
         serializedVersion: 2
-        x: 233
-        y: 140
-        width: 19
-        height: 35
+        x: 238
+        y: 389
+        width: 38
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -945,12 +945,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 44e42ea20d831834daf503a1a836b10b, type: 3}
+      name: _NormalMap
     nameFileIdTable:
       body: 233227185538982242
       ear: 2355482359304134259
