@@ -4,68 +4,54 @@ using UnityEngine;
 using Spine.Unity;
 
 
-public enum AttackType
+public enum BossState
 {
 }
-public class RockBossController : MonoBehaviour
+
+public class RockBossController : BossController
 {
-    public GameObject player;
-    public GameObject aimPoint;
-    public Collider2D close_collider;
-
-    public string attack_close, attack_far, charge_close, charge_far, hit, idle;
-    public Spine.AnimationState spineAnimationState { get; private set; }
-    public Spine.Skeleton skeleton { get; private set; }
-
-    [SerializeField] string boneName;
-    
-    private Spine.TrackEntry currentTrack = null;
-
-    private Rigidbody2D rigidbody;    
-    private LayerMask playerMask;
-    private SkeletonAnimation skeletonAnimation;
-
-    private bool isPlayerClose = false;
-
-    private Spine.Bone aimBone;
+    [Space(2)]
+    [Header("Spine Animation name for Rock Boss Pattern")]
+    [SerializeField] private string _ready_attack_near;
+    [SerializeField] private string _ready_attack_middle;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        rigidbody = GetComponentInChildren<Rigidbody2D>();
-        playerMask = LayerMask.GetMask("Player");
-
-        skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
-        spineAnimationState = skeletonAnimation.AnimationState;
-        skeleton = skeletonAnimation.Skeleton;
-        
-        aimBone = skeleton.FindBone(boneName);
-
-        StartCoroutine(Pattern());
+        base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Attack_near()
     {
+        base.Attack_near();
     }
 
-    void FixedUpdate()
+    public override void Attack_middle()
     {
-        SearchPlayer();
+        base.Attack_middle();
     }
 
-    void SearchPlayer()
+    public override void Attack_far()
     {
-        if (close_collider.IsTouchingLayers(playerMask))
-        {
-            isPlayerClose = true;
-        }
-        else
-        {
-            isPlayerClose = false;
-        }
+        base.Attack_far();
     }
 
+    public override void Damaged()
+    {
+        base.Damaged();
+    }
+
+    public void Ready_attack_near()
+    {
+        _currentTrack = spineAnimationState.SetAnimation(0, _ready_attack_near, true);
+    }
+
+    public void Ready_attack_middle()
+    {
+        _currentTrack = spineAnimationState.SetAnimation(0, _ready_attack_middle, true);
+    }
+    
+    /*
     IEnumerator Pattern()
     {
         while (true)
@@ -115,4 +101,5 @@ public class RockBossController : MonoBehaviour
             yield return new WaitForSpineAnimationComplete(currentTrack);
         }
     }
+    */
 }
