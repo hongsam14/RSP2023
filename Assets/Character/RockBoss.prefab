@@ -603,16 +603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7472428b0dcda834cade1b355c5ee2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  aimPoint: {fileID: 0}
-  close_collider: {fileID: 7613978152813137503}
-  attack_close: attack_close
-  attack_far: attack_far
-  charge_close: charge_paze2
-  charge_far: charge
-  hit: damaged
-  idle: idle
-  boneName: aim
+  _attack_near: attack_close
+  _attack_middle: attack_far
+  _attack_far: 
+  _damaged: damaged
+  _idle: idle
+  aimBoneName: 
+  _ready_attack_near: charge_paze2
+  _ready_attack_middle: charge
 --- !u!1 &8351931605882139471
 GameObject:
   m_ObjectHideFlags: 0
