@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Rock
+  - Sizzer
+  - Paper
   layers:
   - Default
   - TransparentFX
