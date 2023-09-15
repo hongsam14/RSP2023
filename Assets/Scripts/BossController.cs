@@ -16,6 +16,12 @@ public class BossController : MonoBehaviour
     [SerializeField] protected string _damaged;
     [SerializeField] protected string _idle;
 
+    [Space(2)]
+    [Header("Spine Animation name for Rock Boss Pattern")]
+    [SerializeField] private string _ready_attack_near;
+    [SerializeField] private string _ready_attack_middle;
+    [SerializeField] private string _ready_attack_far;
+
     /**
      * Spine Animation
      */
@@ -65,6 +71,21 @@ public class BossController : MonoBehaviour
     public virtual void Attack_far()
     {
         _currentTrack = spineAnimationState.SetAnimation(0, _attack_far, false);
+    }
+
+    public virtual void Ready_attack_near()
+    {
+        _currentTrack = spineAnimationState.SetAnimation(0, _ready_attack_near, true);
+    }
+
+    public virtual void Ready_attack_middle()
+    {
+        _currentTrack = spineAnimationState.SetAnimation(0, _ready_attack_middle, true);
+    }
+
+    public virtual void Ready_attack_far()
+    {
+        _currentTrack = spineAnimationState.SetAnimation(0, _ready_attack_far, true);
     }
 
     public virtual void Damaged()

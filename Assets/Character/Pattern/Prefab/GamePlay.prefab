@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2987692166000657973}
   - component: {fileID: 1616910837845741703}
+  - component: {fileID: 1373478057359393467}
   m_Layer: 0
   m_Name: BossPatternManager
   m_TagString: Untagged
@@ -80,9 +81,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9914864d0fc4374a98db782c6687427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
   _near_collider: {fileID: 6090719915108102069}
   _middle_collider: {fileID: 5772214369098705424}
   _far_collider: {fileID: 883168955968222342}
+  ready_time: 0
+  ready_time_near: 0
+  ready_time_middle: 0
+  ready_time_far: 0
+--- !u!114 &1373478057359393467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130102439293053586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caceeeee8148a34fa113fbb8ef3d19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossPatternManager: {fileID: 0}
+  aimPoint: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6242761514239663032
 GameObject:
   m_ObjectHideFlags: 0
