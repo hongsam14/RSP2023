@@ -10,11 +10,15 @@ public enum BossState
 
 public class RockBossController : BossController
 {
+    [SerializeField] private GameObject laser;
+
+    private Animator _animator;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        _animator = laser.GetComponentInChildren<Animator>();
     }
 
     public override void Attack_near()
@@ -30,6 +34,7 @@ public class RockBossController : BossController
     public override void Attack_far()
     {
         base.Attack_far();
+        _animator.Play("Rock_Laser_Anime");
     }
 
     public override void Damaged()

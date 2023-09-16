@@ -352,6 +352,7 @@ MonoBehaviour:
   _ready_attack_middle: charge_middle
   _ready_attack_far: charge_far
   aimBoneName: aim
+  laser: {fileID: 8321771093393520866}
 --- !u!1001 &3541420694667659091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,5 +499,10 @@ PrefabInstance:
 --- !u!4 &1121237990877582072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6090283262061237390, guid: 3454f31adca22aa4ea95ec987325a7d2, type: 3}
+  m_PrefabInstance: {fileID: 6560188130501363318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8321771093393520866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2915701293690470036, guid: 3454f31adca22aa4ea95ec987325a7d2, type: 3}
   m_PrefabInstance: {fileID: 6560188130501363318}
   m_PrefabAsset: {fileID: 0}
