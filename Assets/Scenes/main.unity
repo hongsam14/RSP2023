@@ -172,7 +172,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.23584908, g: 0, b: 0.20963024, a: 1}
+  m_Color: {r: 0.9622642, g: 0.8313971, b: 0.52198297, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -746,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000011718421
+      value: -0.000007013834
       objectReference: {fileID: 0}
     - target: {fileID: 5598850931638786387, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2396,6 +2396,18 @@ PrefabInstance:
     - target: {fileID: 119034383381204347, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
       propertyPath: _attack_middle
       value: attack_middle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121237990877582072, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9498167
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121237990877582072, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.620949
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121237990877582072, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00004382531
       objectReference: {fileID: 0}
     - target: {fileID: 1244656620132292819, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
       propertyPath: m_Animation
