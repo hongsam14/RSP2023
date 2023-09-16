@@ -7,6 +7,9 @@ public class RockBossPattern : MonoBehaviour
     [SerializeField] private BossPatternManager bossPatternManager;
     [SerializeField] private GameObject aimPoint;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject laser;
+
+    private Animator _animator;
 
     private void Start()
     {
