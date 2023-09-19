@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Rock
+  - Sizzer
+  - Paper
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -12,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - GamePlay
+  - Player
   - Ground Soft
   - Ground Hard
   - 
@@ -50,4 +54,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 1978855467
+    locked: 0
+  - name: UI
+    uniqueID: 4173041
     locked: 0
