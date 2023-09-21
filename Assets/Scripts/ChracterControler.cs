@@ -22,6 +22,11 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string jump;
     [SerializeField] private string onAir;
     [SerializeField] private string fall;
+    [Header("Attack Mode")]
+    [SerializeField] private string a_stand;
+    [SerializeField] private string a_move;
+    [SerializeField] private string a_jump;
+
     //spine animation skeleton
     public Spine.AnimationState spineAnimationState { get; private set; }
     public Spine.Skeleton skeleton { get; private set; }
@@ -40,6 +45,7 @@ public class ChracterControler : MonoBehaviour
     private float _isHeading = 1f;
     private bool _isJumping = false;
     private bool _isFalling = false;
+    private bool _bring = false;
     private GroundType groundType;
     /**
      * Define Animation State 
@@ -241,6 +247,14 @@ public class ChracterControler : MonoBehaviour
         else
         {
             groundType = GroundType.None;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Drop"))
+        {
+            //get orb
         }
     }
 }

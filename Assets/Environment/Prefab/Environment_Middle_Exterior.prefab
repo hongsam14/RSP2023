@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6440339792962006214}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Environment_Middle_Exterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,8 @@ GameObject:
   - component: {fileID: 5780549543884130117}
   - component: {fileID: 5550180629846646488}
   - component: {fileID: 7694047443401039694}
-  m_Layer: 8
+  - component: {fileID: 5827989011248059053}
+  m_Layer: 9
   m_Name: grass_forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +294,33 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!50 &5827989011248059053
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785586928278041873}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4166738316659281738
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +332,7 @@ GameObject:
   - component: {fileID: 5598985203668790391}
   - component: {fileID: 7455971597856860944}
   - component: {fileID: 6985490744954343855}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: grass_particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

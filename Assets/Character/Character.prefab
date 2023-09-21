@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4278642551749556936}
   - component: {fileID: 2478265890191940622}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fd8daaed7b64148a34acb96ba14ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonRenderer: {fileID: 0}
+  skeletonRenderer: {fileID: 7726804495676495093}
   boneName: weapon
   followXYPosition: 1
   followZPosition: 1
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 7310433071193740066}
   - component: {fileID: 3980496642678440781}
   - component: {fileID: 1318374894162814141}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}

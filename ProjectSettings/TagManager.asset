@@ -5,10 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Rock
-  - Sizzer
-  - Paper
   - Attack
+  - Drop
   layers:
   - Default
   - TransparentFX
@@ -17,10 +15,10 @@ TagManager:
   - Water
   - UI
   - GamePlay
+  - Drop
   - Player
   - Ground Soft
   - Ground Hard
-  - 
   - 
   - 
   - 

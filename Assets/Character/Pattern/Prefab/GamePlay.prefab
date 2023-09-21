@@ -32,6 +32,7 @@ Transform:
   - {fileID: 1588601592546477526}
   - {fileID: 3582246383753014}
   - {fileID: 2987692166000657973}
+  - {fileID: 7302333082906868996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &931312184386655944
@@ -149,7 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2987692166000657973}
   - component: {fileID: 1616910837845741703}
-  - component: {fileID: 1373478057359393467}
   m_Layer: 0
   m_Name: BossPatternManager
   m_TagString: Untagged
@@ -195,21 +195,6 @@ MonoBehaviour:
   ready_time_near: 0
   ready_time_middle: 0
   ready_time_far: 0
---- !u!114 &1373478057359393467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6130102439293053586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9caceeeee8148a34fa113fbb8ef3d19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossPatternManager: {fileID: 0}
-  aimPoint: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &6242761514239663032
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +272,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.9203615, y: 14.464307}
   m_EdgeRadius: 0
+--- !u!1 &6644083166745644249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7302333082906868996}
+  - component: {fileID: 1247664099473678587}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7302333082906868996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644083166745644249}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7422006, y: 1.804147, z: 0.253137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5027610197911729103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247664099473678587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644083166745644249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dc5d23b51a474499a851ed273d7d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPrefab: {fileID: 0}
+  size: 20
+  _spawnAmount: 20
+  _maxSpawnAmount: 40
 --- !u!1 &7608516366252593521
 GameObject:
   m_ObjectHideFlags: 0
