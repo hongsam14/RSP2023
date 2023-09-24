@@ -140,6 +140,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 883168955968222342, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
+      propertyPath: m_Size.x
+      value: 23.249292
+      objectReference: {fileID: 0}
+    - target: {fileID: 883168955968222342, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.1208792
+      objectReference: {fileID: 0}
     - target: {fileID: 1247664099473678587, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
       propertyPath: size
       value: 15
@@ -251,6 +259,14 @@ PrefabInstance:
     - target: {fileID: 5043945704030358750, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772214369098705424, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
+      propertyPath: m_Size.x
+      value: 13.619932
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772214369098705424, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
+      propertyPath: m_Offset.x
+      value: 3.693801
       objectReference: {fileID: 0}
     - target: {fileID: 7302333082906868996, guid: 696812f19ccb036439bd9a1da5b40437, type: 3}
       propertyPath: m_LocalPosition.x
@@ -916,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.14999
+      value: 5.1499915
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.y

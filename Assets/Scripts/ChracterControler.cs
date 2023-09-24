@@ -20,12 +20,12 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string stand;
     [SerializeField] private string move;
     [SerializeField] private string jump;
-    [SerializeField] private string onAir;
     [SerializeField] private string fall;
-    [Header("Attack Mode")]
-    [SerializeField] private string a_stand;
-    [SerializeField] private string a_move;
-    [SerializeField] private string a_jump;
+
+    [SerializeField] private string bring_stand;
+    [SerializeField] private string bring_move;
+    [SerializeField] private string bring_jump;
+    [SerializeField] private string bring_fall;
 
     //spine animation skeleton
     public Spine.AnimationState spineAnimationState { get; private set; }
@@ -47,6 +47,9 @@ public class ChracterControler : MonoBehaviour
     private bool _isFalling = false;
     private bool _bring = false;
     private GroundType groundType;
+    
+    private bool _isMoving_past = false;
+    private bool _isFalling_past = false;
     /**
      * Define Animation State 
      * 
@@ -56,17 +59,31 @@ public class ChracterControler : MonoBehaviour
         get => _isMoving;
         set
         {
-            if (value == _isMoving)
-                return ;
             if (!isJumping)
             {
-                switch (value)
+                switch (_bring)
                 {
                     case true:
-                        currentTrack = spineAnimationState?.SetAnimation(0, move, true);
+                        switch (value)
+                        {
+                            case true:
+                                currentTrack = spineAnimationState?.SetAnimation(0, bring_move, true);
+                                break;
+                            case false:
+                                currentTrack = spineAnimationState?.SetAnimation(0, bring_stand, true);
+                                break;
+                        }
                         break;
                     case false:
-                        currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
+                        switch (value)
+                        {
+                            case true:
+                                currentTrack = spineAnimationState?.SetAnimation(0, move, true);
+                                break;
+                            case false:
+                                currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
+                                break;
+                        }
                         break;
                 }
             }
@@ -89,18 +106,35 @@ public class ChracterControler : MonoBehaviour
         get => _isJumping;
         set
         {
-            if (value == _isJumping)
-                return ;
-            switch (value)
+            switch (_bring)
             {
                 case true:
-                    currentTrack = spineAnimationState?.SetAnimation(0, jump, false);
+                    switch (value)
+                    {
+                        case true:
+                            currentTrack = spineAnimationState?.SetAnimation(0, bring_jump, false);
+                            break;
+                        case false:
+                            if (_isMoving)
+                                currentTrack = spineAnimationState?.SetAnimation(0, bring_move, true);
+                            else
+                                currentTrack = spineAnimationState?.SetAnimation(0, bring_stand, true);
+                            break;
+                    }
                     break;
                 case false:
-                    if (_isMoving)
-                        currentTrack = spineAnimationState?.SetAnimation(0, move, true);
-                    else
-                        currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
+                    switch (value)
+                    {
+                        case true:
+                            currentTrack = spineAnimationState?.SetAnimation(0, jump, false);
+                            break;
+                        case false:
+                            if (_isMoving)
+                                currentTrack = spineAnimationState?.SetAnimation(0, move, true);
+                            else
+                                currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
+                            break;
+                    }
                     break;
             }
             _isJumping = value;
@@ -111,20 +145,38 @@ public class ChracterControler : MonoBehaviour
         get => _isFalling;
         set
         {
-            if (value == _isFalling)
-                return;
-            switch (value)
+            switch (_bring)
             {
                 case true:
-                    currentTrack = spineAnimationState?.SetAnimation(0, onAir, true);
+                    switch (value)
+                    {
+                        case true:
+                            currentTrack = spineAnimationState?.SetAnimation(0, bring_fall, true);
+                            break;
+                    }
                     break;
-                /*
                 case false:
-                    currentTrack = spineAnimationState?.SetAnimation(0, fall, false);
+                    switch (value)
+                    {
+                        case true:
+                            currentTrack = spineAnimationState?.SetAnimation(0, fall, true);
+                            break;
+                    }
                     break;
-                */
             }
             _isFalling = value;
+        }
+    }
+
+    public bool isBring
+    {
+        get => _bring;
+        set
+        {
+            _bring = value;
+            isMoving = _isMoving;
+            isJumping = _isJumping;
+            isFalling = _isFalling;
         }
     }
 
@@ -209,7 +261,11 @@ public class ChracterControler : MonoBehaviour
             prevVelocity.y = rigidbody.velocity.y;
             rigidbody.velocity = prevVelocity;
 
-            isFalling = false;
+            if (_isFalling_past)
+            {
+                isFalling = false;
+                _isFalling_past = isFalling;
+            }
             isJumping = false;
             Debug.Log("landing");
         }
@@ -218,7 +274,11 @@ public class ChracterControler : MonoBehaviour
     void SetStatus(float movement)
     {
         //set isMoving
-        isMoving = !(movement == 0);
+        if (!(movement == 0) != _isMoving_past)
+        {
+            isMoving = !(movement == 0);
+            _isMoving_past = isMoving;
+        }
         
         //set isHeading
         if (movement > 0f)
@@ -229,7 +289,11 @@ public class ChracterControler : MonoBehaviour
         //falling
         if (isJumping && rigidbody.velocity.y < 0)
         {
-            isFalling = true;
+            if (!_isFalling_past)
+            {
+                isFalling = true;
+                _isFalling_past = isFalling;
+            }
             Debug.Log("on air");
         }
     }
@@ -255,6 +319,16 @@ public class ChracterControler : MonoBehaviour
         if (collision.gameObject.CompareTag("Drop"))
         {
             //get orb
+            isBring = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            Debug.Log("attacked");
+            isBring = false;
         }
     }
 }

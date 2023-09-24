@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2897847427949830429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.00052359875, w: 0.9999999}
-  m_LocalPosition: {x: 0.18542992, y: 6.223408, z: 0}
+  m_LocalPosition: {x: 0.1854299, y: 6.2234077, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,8 +170,11 @@ MonoBehaviour:
   stand: stand
   move: move
   jump: jump
-  onAir: 
-  fall: 
+  fall: fall
+  bring_stand: bring_stand
+  bring_move: bring_move
+  bring_jump: bring_jump
+  bring_fall: bring_fall
 --- !u!1 &9216320757401636077
 GameObject:
   m_ObjectHideFlags: 0
