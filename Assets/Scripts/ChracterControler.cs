@@ -26,6 +26,8 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string bring_move;
     [SerializeField] private string bring_jump;
     [SerializeField] private string bring_fall;
+    [Header("Weapon")]
+    [SerializeField] private GameObject weapon_obj;
 
     //spine animation skeleton
     public Spine.AnimationState spineAnimationState { get; private set; }
@@ -50,6 +52,9 @@ public class ChracterControler : MonoBehaviour
     
     private bool _isMoving_past = false;
     private bool _isFalling_past = false;
+    //weapon
+    private Weapon weapon;
+    
     /**
      * Define Animation State 
      * 
@@ -177,6 +182,8 @@ public class ChracterControler : MonoBehaviour
             isMoving = _isMoving;
             isJumping = _isJumping;
             isFalling = _isFalling;
+            //weapon
+            weapon_obj.SetActive(value);
         }
     }
 
@@ -203,6 +210,9 @@ public class ChracterControler : MonoBehaviour
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
+        //weapon object
+        weapon = weapon_obj.GetComponent<Weapon>();
+        weapon_obj.SetActive(false);
     }
 
 
@@ -319,7 +329,14 @@ public class ChracterControler : MonoBehaviour
         if (collision.gameObject.CompareTag("Drop"))
         {
             //get orb
-            isBring = true;
+            if (!isBring)
+            {
+                isBring = true;
+            }
+            else
+            {
+                weapon.fingers += 1;
+            }
         }
     }
 
@@ -328,6 +345,7 @@ public class ChracterControler : MonoBehaviour
         if (collision.gameObject.CompareTag("Attack"))
         {
             Debug.Log("attacked");
+            weapon.fingers = 0;
             isBring = false;
         }
     }
