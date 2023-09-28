@@ -21,6 +21,7 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string move;
     [SerializeField] private string jump;
     [SerializeField] private string fall;
+    [SerializeField] private string attack;
 
     [SerializeField] private string bring_stand;
     [SerializeField] private string bring_move;
@@ -28,6 +29,8 @@ public class ChracterControler : MonoBehaviour
     [SerializeField] private string bring_fall;
     [Header("Weapon")]
     [SerializeField] private GameObject weapon_obj;
+    [Header("Game")]
+    [SerializeField] private GameBehaviour gameBehaviour;
 
     //spine animation skeleton
     public Spine.AnimationState spineAnimationState { get; private set; }
@@ -48,6 +51,7 @@ public class ChracterControler : MonoBehaviour
     private bool _isJumping = false;
     private bool _isFalling = false;
     private bool _bring = false;
+    private bool _attack = false;
     private GroundType groundType;
     
     private bool _isMoving_past = false;
@@ -256,6 +260,8 @@ public class ChracterControler : MonoBehaviour
 
     void Jump()
     {
+        if (_attack)
+            return;
         //jump
         if (jumpInput && groundType != GroundType.None)
         {
@@ -283,6 +289,8 @@ public class ChracterControler : MonoBehaviour
 
     void SetStatus(float movement)
     {
+        if (_attack)
+            return;
         //set isMoving
         if (!(movement == 0) != _isMoving_past)
         {
@@ -326,7 +334,7 @@ public class ChracterControler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Drop"))
+        if (collision.gameObject.CompareTag("Drop") && !_attack)
         {
             //get orb
             if (!isBring)
@@ -340,13 +348,63 @@ public class ChracterControler : MonoBehaviour
         }
     }
 
+    public void Empty_hand()
+    {
+        weapon.fingers = 0;
+        isBring = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Attack"))
         {
             Debug.Log("attacked");
-            weapon.fingers = 0;
-            isBring = false;
+            if (!_bring)
+            {
+                //hp loss or die
+                return;
+            }
+            Attack atk = collision.gameObject.GetComponent<Attack>();
+            if (atk.finger < 0)
+            {
+                Empty_hand();
+            }
+            else
+            {
+                //judge
+                switch (gameBehaviour.Judge_rsp(weapon.fingers, atk.finger))
+                {
+                    case Result.DRAW:
+                        Debug.Log("draw");
+                        StartCoroutine(Attack());
+                        break;
+                    case Result.LOSE:
+                        Debug.Log("lose");
+                        StartCoroutine(Attack());
+                        break;
+                    case Result.WIN:
+                        Debug.Log("win");
+                        StartCoroutine(Attack());
+                        break;
+                    case Result.OUT:
+                        Empty_hand();
+                        break;
+                }
+            }
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        _attack = true;
+        //heading to boss(right)
+        isHeading = 1f;
+        //play animation
+        currentTrack = spineAnimationState?.SetAnimation(0, attack, false);
+        yield return new WaitUntil(() => currentTrack.IsComplete);
+        //end flag
+        _attack = false;
+        //return to default
+        Empty_hand();
     }
 }

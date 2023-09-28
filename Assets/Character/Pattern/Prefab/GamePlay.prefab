@@ -483,6 +483,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3582246383753014}
+  - component: {fileID: 423657910461883207}
+  - component: {fileID: 6331142613367802782}
   m_Layer: 0
   m_Name: TriggerManager
   m_TagString: Untagged
@@ -505,3 +507,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5027610197911729103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &423657910461883207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120420135625478864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602db4e301ba524788051d5fb1b3c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowdownFactor: 0.05
+  slowdownLength: 2
+--- !u!114 &6331142613367802782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120420135625478864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de56cdf44973744fb483790e5dc0b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCamera: {fileID: 0}
