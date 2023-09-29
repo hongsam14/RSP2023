@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8081200924109792151}
   - component: {fileID: 7310433071193740066}
-  - component: {fileID: 3980496642678440781}
+  - component: {fileID: 758428981368079276}
   - component: {fileID: 1318374894162814141}
   m_Layer: 8
   m_Name: Character_body
@@ -48,11 +48,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
-  m_LinearDrag: 2
+  m_Mass: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a792cb2720e89a24a8714c3804f262d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -60,11 +60,11 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &3980496642678440781
-CapsuleCollider2D:
+--- !u!58 &758428981368079276
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,9 +95,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06743652, y: 0.49205422}
-  m_Size: {x: 1.6059588, y: 7.245086}
-  m_Direction: 0
+  m_Offset: {x: -0.20084937, y: -2.2093422}
+  serializedVersion: 2
+  m_Radius: 0.90169865
 --- !u!114 &1318374894162814141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693d8cd8011af824fb176e85ac09f5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 30
-  jumpForce: 50
+  speed: 10
+  maxSpeed: 15
+  jumpForce: 15
   stand: stand
   move: move
   jump: jump
