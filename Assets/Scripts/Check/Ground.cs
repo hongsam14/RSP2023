@@ -7,6 +7,9 @@ public class Ground : MonoBehaviour
     public bool onGround { get; private set; }
     public float friction { get; private set; }
 
+    private PhysicsMaterial2D _physicalMat = null;
+    private Vector2 _normal;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EvaluateCollision(collision);
@@ -21,26 +24,26 @@ public class Ground : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        EvaluateCollision(collision);
-        RetrieveFriction(collision);
+        friction = 0;
+        onGround = false;
     }
 
     private void EvaluateCollision(Collision2D collision)
     {
         for (int i = 0; i < collision.contactCount; i++)
         {
-            Vector2 normal = collision.GetContact(i).normal;
-            onGround |= (normal.y >= 0.9f);
+            _normal = collision.GetContact(i).normal;
+            onGround |= (_normal.y >= 0.9f);
         }
     }
 
     private void RetrieveFriction(Collision2D collision)
     {
-        PhysicsMaterial2D mat = collision.rigidbody.sharedMaterial;
+        _physicalMat = collision.rigidbody.sharedMaterial;
         friction = 0;
-        if (mat != null)
+        if (_physicalMat != null)
         {
-            friction = mat.friction;
+            friction = _physicalMat.friction;
         }
     }
 }

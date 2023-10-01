@@ -2,8 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MoveStatus
+{
+    MOVE,
+    STAND
+}
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class Move : MonoBehaviour
 {
+    public MoveStatus moveStatus
+    {
+        get
+        {
+            return _moveStatus;
+        }
+        set
+        {
+            if (value == _moveStatus)
+                return;
+            switch (value)
+            {
+                case MoveStatus.MOVE:
+                    //moveAnime(value);
+                    break ;
+                case MoveStatus.STAND:
+                    //standAnime(value);
+                    break ;
+            }
+            _moveStatus = value;
+        }
+    }
+
+    public delegate void AnimeFunc(MoveStatus status);
+    public AnimeFunc standAnime;
+    public AnimeFunc moveAnime;
+    
     [SerializeField] private InputController input = null;
     [SerializeField, Range(0f, 100f)] private float maxSpeed = 4f;
     [SerializeField, Range(0f, 100f)] private float maxAcceleration = 35f;
@@ -20,17 +54,14 @@ public class Move : MonoBehaviour
     private float _acceleration;
     private bool _onGround;
 
+    private MoveStatus _moveStatus;
+
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
         _ground = GetComponent<Ground>();
         
         _desiredVelocity = Vector2.zero;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
