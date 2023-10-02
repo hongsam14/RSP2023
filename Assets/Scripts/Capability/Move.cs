@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MoveStatus
-{
-    MOVE,
-    STAND
-}
-
 [RequireComponent(typeof(Rigidbody2D), typeof(Ground))]
 public class Move : MonoBehaviour
 {
@@ -24,24 +18,24 @@ public class Move : MonoBehaviour
             switch (value)
             {
                 case MoveStatus.MOVE:
-                    //moveAnime(value);
+                    //_animationController.Move();
                     break ;
                 case MoveStatus.STAND:
-                    //standAnime(value);
+                    //_animationController.Stand();
                     break ;
             }
             _moveStatus = value;
         }
     }
 
-    public delegate void AnimeFunc(MoveStatus status);
-    public AnimeFunc standAnime;
-    public AnimeFunc moveAnime;
-    
     [SerializeField] private InputController input = null;
     [SerializeField, Range(0f, 100f)] private float maxSpeed = 4f;
     [SerializeField, Range(0f, 100f)] private float maxAcceleration = 35f;
     [SerializeField, Range(0f, 100f)] private float maxAirAcceleration = 20f;
+    /*
+    [Header("Animation Controller")]
+    [SerializeField] private ObjectAnimationController _animationController;
+    */
 
     private Vector2 _dir;
     private Vector2 _desiredVelocity;

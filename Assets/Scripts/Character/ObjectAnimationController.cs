@@ -29,6 +29,8 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
     [SerializeField] [SpineAnimation] protected string jump;
     [SerializeField] [SpineAnimation] protected string fall;
 
+    protected bool _isjumping;
+
     private bool _heading;
 
     protected virtual void Awake()
@@ -43,16 +45,21 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
 
     public virtual void Move()
     {
+        if (_isjumping)
+            return;
         currentTrack = spineAnimationState?.SetAnimation(0, move, true);
     }
 
     public virtual void Stand()
     {
+        if (_isjumping)
+            return;
         currentTrack = spineAnimationState?.SetAnimation(0, stand, true);
     }
 
     public virtual void Jump(AirStatus status)
     {
+        _isjumping = true;
         switch (status)
         {
             case AirStatus.UP:
@@ -68,6 +75,7 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
 
     public virtual void Land(MoveStatus status)
     {
+        _isjumping = false;
         switch (status)
         {
             case MoveStatus.MOVE:

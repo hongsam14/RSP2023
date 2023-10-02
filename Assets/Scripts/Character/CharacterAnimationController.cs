@@ -25,6 +25,8 @@ public class CharacterAnimationController : ObjectAnimationController
 
     public override void Stand()
     {
+        if (_isjumping)
+            return;
         if (bring)
             currentTrack = spineAnimationState?.SetAnimation(0, bring_stand, true);
         else
@@ -33,6 +35,8 @@ public class CharacterAnimationController : ObjectAnimationController
 
     public override void Move()
     {
+        if (_isjumping)
+            return;
         if (bring)
             currentTrack = spineAnimationState?.SetAnimation(0, bring_move, true);
         else
