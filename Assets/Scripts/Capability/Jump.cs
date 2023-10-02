@@ -9,7 +9,7 @@ public enum AirStatus
     GROUND
 }
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Ground))]
 public class Jump : MonoBehaviour
 {
     public AirStatus airStatus

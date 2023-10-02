@@ -8,7 +8,7 @@ public enum MoveStatus
     STAND
 }
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Ground))]
 public class Move : MonoBehaviour
 {
     public MoveStatus moveStatus
