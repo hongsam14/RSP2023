@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
             {
                 case AirStatus.UP:
                 case AirStatus.DOWN:
-                    _animationController.Jump(_airStatus);
+                    _animationController.Jump(value);
                     break;
                 case AirStatus.LAND:
                     _animationController.Land(_moveStatus);
