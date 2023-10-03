@@ -12,6 +12,8 @@ public class CharacterAnimationController : ObjectAnimationController
     [SerializeField] [SpineAnimation] protected string bring_stand;
     [SerializeField] [SpineAnimation] protected string bring_jump;
     [SerializeField] [SpineAnimation] protected string bring_fall;
+    [Header("Attack Animation")]
+    [SerializeField] [SpineAnimation] protected string attack;
 
     protected override void Awake()
     {

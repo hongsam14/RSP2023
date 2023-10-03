@@ -58,7 +58,6 @@ public class Movement : MonoBehaviour
                     _animationController.Land(_moveStatus);
                     break;
             }
-            Debug.Log(value);
             _airStatus = value;
         }
     }
