@@ -256,7 +256,7 @@ MonoBehaviour:
   maxSpeed: 4
   maxAcceleration: 35
   maxAirAcceleration: 20
-  jumpHeight: 5
+  jumpHeight: 5.5
   maxAirJumps: 1
   downwardMovementMultiplier: 3
   upwardMovementMultiplier: 1.7
@@ -384,7 +384,7 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: stand
+  _animationName: 
   loop: 0
   timeScale: 1
 --- !u!114 &9095154812172257274
@@ -407,6 +407,7 @@ MonoBehaviour:
   bring_stand: bring_stand
   bring_jump: bring_jump
   bring_fall: bring_fall
+  attack: attack
 --- !u!1 &5726383152205327667
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,3 +500,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationController: {fileID: 9095154812172257274}
   _body: {fileID: 3370430159646996587}
+  _weapon: {fileID: 0}

@@ -12,10 +12,7 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
         {
             if (value == _heading)
                 return;
-            _heading = value;
-            //flip or not
-            if (skeleton != null)
-                skeleton.ScaleX = value ? 1f : -1f;
+            TurnHead(value);
         }
     }
     
@@ -85,5 +82,13 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
                 this.Stand();
                 break;
         }
+    }
+
+    public virtual void TurnHead(bool value)
+    {
+        _heading = value;
+        //flip or not
+        if (skeleton != null)
+            skeleton.ScaleX = value ? 1f : -1f;
     }
 }

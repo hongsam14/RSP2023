@@ -12,5 +12,11 @@ public class Character_GameBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
+        Attack(collision.transform);
+    }
+
+    private void Attack(Transform collisionPos)
+    {
+        _animationController.Attack(collisionPos.position);
     }
 }
