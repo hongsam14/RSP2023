@@ -38,11 +38,7 @@ public class CharacterAnimationController : ObjectAnimationController
             return;
         if (isAttacking)
         {
-            //clear exist animation queue
-            if (currentTrack.Next != null)
-                spineAnimationState?.ClearNext(currentTrack);
-            //add animation to queue;
-            spineAnimationState?.AddAnimation(0, stand, true, 0);
+            RegisterAnimation(stand, true);
             return;
         }
         
@@ -58,11 +54,7 @@ public class CharacterAnimationController : ObjectAnimationController
             return;
         if (isAttacking)
         {
-            //clear exist animation queue
-            if (currentTrack.Next != null)
-                spineAnimationState?.ClearNext(currentTrack);
-            //add animation to queue;
-            spineAnimationState?.AddAnimation(0, move, true, 0);
+            RegisterAnimation(move, true);
             return;
         }
         
@@ -76,11 +68,7 @@ public class CharacterAnimationController : ObjectAnimationController
     {
         if (isAttacking)
         {
-            //clear exist animation queue
-            if (currentTrack.Next != null)
-                spineAnimationState?.ClearNext(currentTrack);
-            //add animation to queue;
-            spineAnimationState?.AddAnimation(0, fall, true, 0);
+            RegisterAnimation(fall, true);
             return;
         }
         if (isBring)
@@ -126,12 +114,13 @@ public class CharacterAnimationController : ObjectAnimationController
         
         currentTrack = spineAnimationState?.SetAnimation(0, attack, false);
         //add current animation to queue;
-        spineAnimationState?.AddAnimation(0, _tmp_track.Animation, _tmp_track.Loop, 0);
-        
+        RegisterAnimation(_tmp_track);
         yield return new WaitForSpineAnimationComplete(currentTrack);
 
         isAttacking = false;
+        
         //restore head data
         base.TurnHead(_tmp_head);
+        PlayRegisteredAnimation();
     }
 }

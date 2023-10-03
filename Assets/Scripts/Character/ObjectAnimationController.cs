@@ -12,6 +12,7 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
         {
             if (value == _heading)
                 return;
+            _heading = value;
             TurnHead(value);
         }
     }
@@ -25,10 +26,12 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
     [SerializeField] [SpineAnimation] protected string stand;
     [SerializeField] [SpineAnimation] protected string jump;
     [SerializeField] [SpineAnimation] protected string fall;
+    [SerializeField] [SpineAnimation] protected string hit;
 
-    protected bool _isjumping;
-
-    private bool _heading;
+    protected bool _isjumping = false;
+    
+    private bool _heading = true;
+    private (string, bool) _tmp_anime;
 
     protected virtual void Awake()
     {
@@ -86,9 +89,25 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
 
     public virtual void TurnHead(bool value)
     {
-        _heading = value;
         //flip or not
         if (skeleton != null)
             skeleton.ScaleX = value ? 1f : -1f;
+    }
+
+    protected void RegisterAnimation(string anime_name, bool loop)
+    {
+        _tmp_anime.Item1 = anime_name;
+        _tmp_anime.Item2 = loop;
+    }
+
+    protected void RegisterAnimation(Spine.TrackEntry track)
+    {
+        _tmp_anime.Item1 = track.Animation.Name;
+        _tmp_anime.Item2 = track.Loop;
+    }
+
+    protected void PlayRegisteredAnimation()
+    {
+        currentTrack = spineAnimationState?.SetAnimation(0, _tmp_anime.Item1, _tmp_anime.Item2);
     }
 }

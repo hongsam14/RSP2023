@@ -113,7 +113,7 @@ public class Movement : MonoBehaviour
 
     private MoveStatus _moveStatus;
     private AirStatus _airStatus;
-    private bool _headingRight;
+    private bool _headingRight = true;
 
     void Awake()
     {
