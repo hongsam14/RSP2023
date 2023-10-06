@@ -403,6 +403,7 @@ MonoBehaviour:
   stand: stand
   jump: jump
   fall: fall
+  hit: 
   bring_move: bring_move
   bring_stand: bring_stand
   bring_jump: bring_jump
@@ -500,4 +501,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationController: {fileID: 9095154812172257274}
   _body: {fileID: 3370430159646996587}
-  _weapon: {fileID: 0}
+  _weapon: {fileID: 2848584580077357036}

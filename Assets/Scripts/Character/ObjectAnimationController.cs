@@ -29,6 +29,7 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
     [SerializeField] [SpineAnimation] protected string hit;
 
     protected bool _isjumping = false;
+    protected AirStatus _status;
     
     private bool _heading = true;
     private (string, bool) _tmp_anime;
@@ -60,6 +61,8 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
     public virtual void Jump(AirStatus status)
     {
         _isjumping = true;
+        _status = status;
+        
         switch (status)
         {
             case AirStatus.UP:
@@ -92,6 +95,10 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
         //flip or not
         if (skeleton != null)
             skeleton.ScaleX = value ? 1f : -1f;
+    }
+
+    public virtual void Hit(Vector2 enempyPos)
+    {
     }
 
     protected void RegisterAnimation(string anime_name, bool loop)

@@ -8,7 +8,17 @@ public class CharacterAnimationController : ObjectAnimationController
     /**
      * http://en.esotericsoftware.com/spine-applying-animations
      */
-    public bool isBring { get; set; } = false;
+    public bool isBring
+    {
+        get => _bring;
+        set
+        {
+            if (value == _bring)
+                return;
+            _bring = value;
+            BringAnime();
+        }
+    }
     public bool isAttacking { get; private set; } = false;
 
     [Header("Bring Weapon Animation")]
@@ -21,6 +31,7 @@ public class CharacterAnimationController : ObjectAnimationController
 
     private Spine.TrackEntry _tmp_track;
     private bool _tmp_head;
+    private bool _bring = false;
 
     protected override void Awake()
     {
@@ -66,6 +77,9 @@ public class CharacterAnimationController : ObjectAnimationController
 
     public override void Jump(AirStatus status)
     {
+        _isjumping = true;
+        _status = status;
+        
         if (isAttacking)
         {
             RegisterAnimation(fall, true);
@@ -118,9 +132,28 @@ public class CharacterAnimationController : ObjectAnimationController
         yield return new WaitForSpineAnimationComplete(currentTrack);
 
         isAttacking = false;
+        isBring = false;
         
         //restore head data
         base.TurnHead(_tmp_head);
         PlayRegisteredAnimation();
+    }
+
+    private void BringAnime()
+    {
+        string name = currentTrack.Animation.Name;
+
+        if (name == move || name == bring_move)
+        {
+            Move();
+        }
+        else if (name == stand || name == bring_stand)
+        {
+            Stand();
+        }
+        else if (name == jump || name == bring_jump)
+        {
+            Jump(_status);
+        }
     }
 }

@@ -16,6 +16,7 @@ public class Character_GameBehaviour : MonoBehaviour
 
     private void Attack(Transform collisionPos)
     {
-        _animationController.Attack(collisionPos.position);
+        //_animationController.Attack(collisionPos.position);
+        _animationController.isBring = !_animationController.isBring;
     }
 }
