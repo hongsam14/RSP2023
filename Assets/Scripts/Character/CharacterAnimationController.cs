@@ -53,7 +53,7 @@ public class CharacterAnimationController : ObjectAnimationController
             return;
         }
         
-        if (isBring)
+        if (_bring)
             currentTrack = spineAnimationState?.SetAnimation(0, bring_stand, true);
         else
             base.Stand();
@@ -69,7 +69,7 @@ public class CharacterAnimationController : ObjectAnimationController
             return;
         }
         
-        if (isBring)
+        if (_bring)
             currentTrack = spineAnimationState?.SetAnimation(0, bring_move, true);
         else
             base.Move();
@@ -85,7 +85,7 @@ public class CharacterAnimationController : ObjectAnimationController
             RegisterAnimation(fall, true);
             return;
         }
-        if (isBring)
+        if (_bring)
         {
             switch (status)
             {
@@ -110,6 +110,13 @@ public class CharacterAnimationController : ObjectAnimationController
         if (isAttacking)
             return;
         base.TurnHead(value);
+    }
+
+    public override void Hit()
+    {
+        isBring = false;
+        
+        base.Hit();
     }
 
     public void Attack(Vector2 enemyPos)

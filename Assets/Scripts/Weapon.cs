@@ -49,9 +49,9 @@ public class Weapon : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
     private uint _fingers;
-    
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _fingers = 0;

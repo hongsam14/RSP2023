@@ -97,8 +97,9 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
             skeleton.ScaleX = value ? 1f : -1f;
     }
 
-    public virtual void Hit(Vector2 enempyPos)
+    public virtual void Hit()
     {
+        currentTrack = spineAnimationState?.SetAnimation(0, hit, true);
     }
 
     protected void RegisterAnimation(string anime_name, bool loop)

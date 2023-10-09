@@ -75,6 +75,17 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public bool hit
+    {
+        get => _hit;
+        set
+        {
+            if (value == _hit)
+                return;
+            _hit = value;
+        }
+    }
+
     [Header("Animation Controller")]
     [SerializeField] private ObjectAnimationController _animationController;
     [Header("Input Controller")]
@@ -114,6 +125,7 @@ public class Movement : MonoBehaviour
     private MoveStatus _moveStatus;
     private AirStatus _airStatus;
     private bool _headingRight = true;
+    private bool _hit = false;
 
     void Awake()
     {
@@ -127,6 +139,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_hit)
+            return;
         _dir.x = input.RetrieveMoveInput();
 
         //move Anime control
