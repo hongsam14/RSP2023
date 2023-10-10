@@ -29,7 +29,6 @@ public class CharacterAnimationController : ObjectAnimationController
     [Header("Attack Animation")]
     [SerializeField] [SpineAnimation] protected string attack;
 
-    private Spine.TrackEntry _tmp_track;
     private bool _tmp_head;
     private bool _bring = false;
 
@@ -129,13 +128,12 @@ public class CharacterAnimationController : ObjectAnimationController
 
     private IEnumerator AttackAnime()
     {
-        _tmp_track = currentTrack;
+        RegisterAnimation(currentTrack);
         
         isAttacking = true;
         
         currentTrack = spineAnimationState?.SetAnimation(0, attack, false);
         //add current animation to queue;
-        RegisterAnimation(_tmp_track);
         yield return new WaitForSpineAnimationComplete(currentTrack);
 
         isAttacking = false;

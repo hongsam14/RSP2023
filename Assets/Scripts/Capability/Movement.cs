@@ -30,10 +30,12 @@ public class Movement : MonoBehaviour
             switch (value)
             {
                 case MoveStatus.MOVE:
-                    _animationController.Move();
+                    if (!hit)
+                        _animationController.Move();
                     break;
                 case MoveStatus.STAND:
-                    _animationController.Stand();
+                    if (!hit)
+                        _animationController.Stand();
                     break;
             }
             _moveStatus = value;
@@ -52,9 +54,12 @@ public class Movement : MonoBehaviour
             {
                 case AirStatus.UP:
                 case AirStatus.DOWN:
-                    _animationController.Jump(value);
+                    if (!hit)
+                        _animationController.Jump(value);
                     break;
                 case AirStatus.LAND:
+                    if (hit)
+                        hit = false;
                     _animationController.Land(_moveStatus);
                     break;
             }
@@ -101,6 +106,9 @@ public class Movement : MonoBehaviour
     [SerializeField, Range(0f, 5f)] private float upwardMovementMultiplier = 1.7f;
     [SerializeField, Range(0f, 0.3f)] private float _coyoteTime = 0.2f;
     [SerializeField, Range(0f, 0.3f)] private float _jumpBufferTime = 0.2f;
+    [Header("hit knockback")]
+    [SerializeField] private Transform _hitbox;
+    [SerializeField, Range(0f, 0.3f)] private float _knockBackBufferTime = 0.2f;
 
     private Vector2 _dir;
     private Vector2 _desiredVelocity;
@@ -121,11 +129,16 @@ public class Movement : MonoBehaviour
 
     private bool _desiredJump;
     private bool _onAir;
+    private bool _desiredHit;
 
     private MoveStatus _moveStatus;
     private AirStatus _airStatus;
     private bool _headingRight = true;
     private bool _hit = false;
+
+    private float _hitSpeed;
+    private float _hitBufferCounter;
+    private float _knockbackForce;
 
     void Awake()
     {
@@ -140,14 +153,18 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (_hit)
-            return;
-        _dir.x = input.RetrieveMoveInput();
+        {
+            //hit
+        }
+        else
+        {
+            _dir.x = input.RetrieveMoveInput();
+            //move Anime control
+            MoveAnimeControl(_dir.x);
 
-        //move Anime control
-        MoveAnimeControl(_dir.x);
-
-        _desiredVelocity.x = _dir.x * Mathf.Max(maxSpeed - _ground.friction, 0f);
-        _desiredJump |= input.RetrieveJumpInput();
+            _desiredVelocity.x = _dir.x * Mathf.Max(maxSpeed - _ground.friction, 0f);
+            _desiredJump |= input.RetrieveJumpInput();
+        }
     }
 
     void FixedUpdate()
@@ -155,8 +172,19 @@ public class Movement : MonoBehaviour
         _onGround = _ground.onGround;
         _velocity = _body.velocity;
 
-        MoveHorizontal();
-        JumpVertical();
+        GroundStatus();
+
+        if (!hit)
+        {
+            MoveHorizontal();
+            JumpVertical();
+        }
+        else
+        {
+            HitMovement();
+        }
+
+        GravityScale();
 
         _body.velocity = _velocity;
 
@@ -180,7 +208,7 @@ public class Movement : MonoBehaviour
         _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange);
     }
 
-    private void JumpVertical()
+    private void GroundStatus()
     {
         if (_onGround) //landing
         {
@@ -204,7 +232,10 @@ public class Movement : MonoBehaviour
                 airStatus = AirStatus.DOWN;
             }
         }
+    }
 
+    private void JumpVertical()
+    {
         if (_desiredJump)
         {
             _desiredJump = false;
@@ -218,19 +249,6 @@ public class Movement : MonoBehaviour
         if (_jumpBufferCounter > 0)
         {
             JumpAction();
-        }
-
-        if (input.RetrieveJumpHoldInput() && _body.velocity.y > 0)
-        {
-            _body.gravityScale = upwardMovementMultiplier;
-        }
-        else if (!input.RetrieveJumpHoldInput() || _body.velocity.y < 0)
-        {
-            _body.gravityScale = downwardMovementMultiplier;
-        }
-        else if (_body.velocity.y == 0)
-        {
-            _body.gravityScale = _defaultGravityScale;
         }
     }
 
@@ -258,5 +276,64 @@ public class Movement : MonoBehaviour
             }
             _velocity.y += _jumpSpeed;
         }
+    }
+
+    private void HitMovement()
+    {
+        if (_desiredHit)
+        {
+            _desiredHit = false;
+            _hitBufferCounter = _knockBackBufferTime;
+        }
+        else if (!_desiredHit && hit)
+        {
+            _hitBufferCounter -= Time.deltaTime;
+        }
+
+        if (_hitBufferCounter > 0)
+        {
+            HitAction();
+        }
+    }
+
+    private void HitAction()
+    {
+        _hitBufferCounter = 0;
+
+        _hitSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * jumpHeight);
+
+        if (_velocity.y > 0f)
+        {
+            _hitSpeed = Mathf.Max(_hitSpeed - _velocity.y, 0f);
+        }
+        else if (_velocity.y < 0f)
+        {
+            _hitSpeed += Mathf.Abs(_body.velocity.y);
+        }
+        _velocity.y += _hitSpeed;
+        _velocity.x += Mathf.Lerp(_knockbackForce, 0f, 0.01f);
+    }
+
+    private void GravityScale()
+    {
+        if (input.RetrieveJumpHoldInput() && _body.velocity.y > 0)
+        {
+            _body.gravityScale = upwardMovementMultiplier;
+        }
+        else if (!input.RetrieveJumpHoldInput() || _body.velocity.y < 0)
+        {
+            _body.gravityScale = downwardMovementMultiplier;
+        }
+        else if (_body.velocity.y == 0)
+        {
+            _body.gravityScale = _defaultGravityScale;
+        }
+    }
+
+    public void Hit(Vector2 colPos)
+    {
+        hit = true;
+        _desiredHit = true;
+        _knockbackForce = transform.position.x - colPos.x; 
     }
 }

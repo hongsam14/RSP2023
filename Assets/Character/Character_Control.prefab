@@ -263,6 +263,8 @@ MonoBehaviour:
   upwardMovementMultiplier: 1.7
   _coyoteTime: 0.2
   _jumpBufferTime: 0.2
+  _hitbox: {fileID: 4662885438660713464}
+  _knockBackBufferTime: 0.2
 --- !u!1 &2429831498360323851
 GameObject:
   m_ObjectHideFlags: 0

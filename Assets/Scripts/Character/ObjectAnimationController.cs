@@ -10,8 +10,6 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
         get => _heading;
         set
         {
-            if (value == _heading)
-                return;
             _heading = value;
             TurnHead(value);
         }
@@ -116,6 +114,9 @@ public class ObjectAnimationController : MonoBehaviour, spineAnimeController
 
     protected void PlayRegisteredAnimation()
     {
+        if (_tmp_anime.Item1 == null)
+            return;
         currentTrack = spineAnimationState?.SetAnimation(0, _tmp_anime.Item1, _tmp_anime.Item2);
+        _tmp_anime.Item1 = null;
     }
 }

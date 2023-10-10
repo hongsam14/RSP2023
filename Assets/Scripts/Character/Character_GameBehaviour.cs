@@ -9,31 +9,25 @@ public class Character_GameBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody2D _body;
     [Header("Weapon")]
     [SerializeField] private Weapon _weapon;
-    [Header("hit time")]
-    [SerializeField] private float _hitTime = 1f;
 
     private Attack _attack;
 
-    private WaitForSecondsRealtime _hitWaitTime;
-
     private bool _hit = false;
+    private bool _attacking = false;
 
     private void Start()
     {
-        _hitWaitTime = new WaitForSecondsRealtime(_hitTime);
-
         _weapon.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger hit");
         _attack = collision.GetComponent<Attack>();
-        if (_attack.finger < 0)
+        if (_attack.finger < 0 || !_weapon.gameObject.activeSelf)
         {
-            Hit(collision.transform);
+            Hit(collision.transform.position);
         }
-        else if (_weapon.gameObject.activeSelf)
+        else if (_attack.finger >= 0 && _weapon.gameObject.activeSelf)
         {
             Attack(collision.transform);
         }
@@ -41,10 +35,9 @@ public class Character_GameBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("drop hit");
         if (collision.gameObject.CompareTag("Drop"))
         {
-            if (!_weapon.gameObject.activeSelf)
+            if (!_weapon.gameObject.activeSelf && !_attacking)
             {
                 activate_weapon();
                 _animationController.isBring = true; 
@@ -57,34 +50,39 @@ public class Character_GameBehaviour : MonoBehaviour
     }
 
     private void Attack(Transform collisionPos)
-    {     
+    {
         _animationController.Attack(collisionPos.position);
-        _animationController.isBring = false;
-        deactivate_weapon();
+        StartCoroutine(attackAction());
         //ÆÇÁ¤
     }
 
-    private void Hit(Transform collisionPos)
+    private void Hit(Vector2 collisionPos)
     {
         if (_hit)
             return;
-        _animationController.TurnHead(((collisionPos.position.x - gameObject.transform.position.x) > 0));
+        _animationController.TurnHead(((collisionPos.x - gameObject.transform.position.x) > 0));
         deactivate_weapon();
+        _movement.Hit(collisionPos);
         StartCoroutine(hitAction());
     }
 
     private IEnumerator hitAction()
     {
         _hit = true;
-        _movement.hit = true;
-        Debug.Log("hit start");
 
         _animationController.Hit();
-        yield return _hitWaitTime;
+        yield return new WaitUntil(() => !_movement.hit);
 
-        Debug.Log("hit end");
-        _movement.hit = false;
         _hit = false;
+    }
+
+    private IEnumerator attackAction()
+    {
+        _attacking = true;
+        yield return new WaitUntil(() => !_animationController.isAttacking);
+        _attacking = false;
+        _animationController.isBring = false;
+        deactivate_weapon();
     }
 
     private void deactivate_weapon()

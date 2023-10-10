@@ -804,6 +804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Control
       objectReference: {fileID: 0}
+    - target: {fileID: 3197199842339195388, guid: 4b212a76d76b6b7478f8bc3759496fb8, type: 3}
+      propertyPath: _knockBack
+      value: 44.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3685574737964507417, guid: 4b212a76d76b6b7478f8bc3759496fb8, type: 3}
       propertyPath: _hitTime
       value: 1
@@ -1023,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.149989
+      value: 5.149973
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.y
