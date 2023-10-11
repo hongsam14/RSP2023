@@ -874,10 +874,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.124144
       objectReference: {fileID: 0}
-    - target: {fileID: 5054251675735047768, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
-      propertyPath: skeletonDataAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: bbc06ab2d012fd043800fa2946f4f720, type: 2}
     - target: {fileID: 7113706918876869702, guid: 87adc87ef069b20499559afd6b4b6c2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.83
@@ -1027,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.149973
+      value: 5.1499915
       objectReference: {fileID: 0}
     - target: {fileID: 4794173293288291784, guid: ce1a9a3f6af4de14fb596c5ba05c0e5b, type: 3}
       propertyPath: m_LocalPosition.y
