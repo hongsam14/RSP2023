@@ -9,6 +9,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private float size;
     [SerializeField] private int _spawnAmount;
     [SerializeField] private int _maxSpawnAmount;
+    [SerializeField] private float _repeatTime;
 
     private ObjectPool<DropObject> _pool;
     private BoxCollider2D _collider;
@@ -36,7 +37,7 @@ public class ObjectPool : MonoBehaviour
             false, _spawnAmount, _maxSpawnAmount
             );
 
-        InvokeRepeating(nameof(Spawn), 1f, 5f);
+        InvokeRepeating(nameof(Spawn), 1f, _repeatTime);
     }
 
     private void Spawn()

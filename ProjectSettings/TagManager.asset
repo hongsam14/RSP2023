@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Attack
   - Drop
+  - SlowZone
   layers:
   - Default
   - TransparentFX
@@ -14,11 +15,11 @@ TagManager:
   - 
   - Water
   - UI
-  - GamePlay
-  - Drop
-  - Player
-  - Ground Soft
-  - Ground Hard
+  - GameEvent
+  - Hit
+  - Item
+  - Ground
+  - 
   - 
   - 
   - 

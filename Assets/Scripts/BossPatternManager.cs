@@ -64,7 +64,7 @@ public class BossPatternManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMask = LayerMask.GetMask("Player");
+        playerMask = LayerMask.GetMask("GameEvent");
 
         _ready_time = new WaitForSecondsRealtime(ready_time);
         _near_wait_time = new WaitForSecondsRealtime(ready_time_near);

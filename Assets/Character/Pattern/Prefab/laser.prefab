@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5354657640906907301}
   - component: {fileID: 7720745168576114632}
   - component: {fileID: 1681641562714611939}
-  m_Layer: 6
+  - component: {fileID: 6293458037848388919}
+  m_Layer: 7
   m_Name: Line
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -79,7 +80,7 @@ LineRenderer:
   m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 26.45, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.4
@@ -221,6 +222,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 26.85, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &6293458037848388919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059989788425347751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee7f2a925bc7444093a391fa86d439a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: 0}
+  layerMaskName: Ground
 --- !u!1 &2915701293690470036
 GameObject:
   m_ObjectHideFlags: 0
